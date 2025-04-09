@@ -10,7 +10,8 @@ public class MovemPlayer : MonoBehaviour
     public float velocidad = 3;
     public float fuerzaSalto = 5;
     [SerializeField] private AudioClip audioClipSalto;
-
+    public float radioCirculo; // Cambia el tamaño del Gizmo aquí
+    public Vector2 posicionCirculo;
 
     void Start()
     {
@@ -72,6 +73,11 @@ public class MovemPlayer : MonoBehaviour
                 GetComponent<Rigidbody2D>().linearVelocity = new Vector2(GetComponent<Rigidbody2D>().linearVelocity.x, fuerzaSalto);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y + posicionCirculo.y), radioCirculo); // Cambia el tamaño del Gizmo aquí
     }
 
     private void FixedUpdate()
