@@ -9,6 +9,8 @@ public class MovemPlayer : MonoBehaviour
     Rigidbody2D rigiBodyPlayer;
     public float velocidad = 3;
     public float fuerzaSalto = 5;
+    [SerializeField] private AudioClip audioClipSalto;
+
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class MovemPlayer : MonoBehaviour
 
         GetComponent<Animator>().SetFloat("velocidadY", GetComponent<Rigidbody2D>().linearVelocity.y); 
 
-        if (GetComponent<Rigidbody2D>().linearVelocity.y == 0) //si esta quieto 
+        if (GetComponent<Rigidbody2D>().linearVelocity.y == 0) //si esta en el suelo 
         {
             GetComponent<Animator>().SetTrigger("enSuelo");
         }
@@ -65,6 +67,8 @@ public class MovemPlayer : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
+                ControladorSonido.Instance.EjecutarSonido(audioClipSalto);
+
                 GetComponent<Rigidbody2D>().linearVelocity = new Vector2(GetComponent<Rigidbody2D>().linearVelocity.x, fuerzaSalto);
             }
         }

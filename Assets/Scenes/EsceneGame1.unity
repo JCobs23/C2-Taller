@@ -1083,11 +1083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.28
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.13
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1125,7 +1125,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3699516623894001175, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1176,7 +1177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
-  fuerzaSalto: 5
+  fuerzaSalto: 10
+  audioClipSalto: {fileID: 8300000, guid: 0f41e88a93dcd2b45905fe3c73442c2c, type: 3}
 --- !u!1001 &4466124547080062056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1307,6 +1309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4184484856176141382, guid: ef545c9ae70ee874a8846459c5dc2cad, type: 3}
+      propertyPath: m_CellLayout
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5641841839858775132, guid: ef545c9ae70ee874a8846459c5dc2cad, type: 3}
       propertyPath: m_Layer
       value: 3
