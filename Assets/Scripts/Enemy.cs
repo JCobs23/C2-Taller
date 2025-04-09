@@ -38,7 +38,8 @@ public class Gruentscrip : MonoBehaviour
     }
     private void Shoot()
     {
-
+       Debug.Log("Disparando");
+       
     }
 
 }
