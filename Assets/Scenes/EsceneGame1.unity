@@ -1136,26 +1136,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3699516623894001175, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3699516623894001175, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3699516623894001175, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      propertyPath: audioClipSalto
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f41e88a93dcd2b45905fe3c73442c2c, type: 3}
-    - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3909779656178767486, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.49
@@ -1200,60 +1180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3699516623894001175, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5497943241019269995, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2123434272167644820}
-    - targetCorrespondingSourceObject: {fileID: 5497943241019269995, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2123434272167644819}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
---- !u!1 &2123434272167644818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5497943241019269995, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
-  m_PrefabInstance: {fileID: 2123434272167644817}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2123434272167644819
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123434272167644818}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4e5a46a40a06d9a4bbf51df18a793844, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2123434272167644820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123434272167644818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c047990d0f7984a8e6b3af8ea49f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 3
-  fuerzaSalto: 10
-  audioClipSalto: {fileID: 8300000, guid: 0f41e88a93dcd2b45905fe3c73442c2c, type: 3}
 --- !u!1001 &4466124547080062056
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 5512495783570345653}
   - component: {fileID: 5293143250664377480}
   - component: {fileID: 8548039449265170507}
-  - component: {fileID: 3699516623894001175}
-  - component: {fileID: 7549613089919177433}
+  - component: {fileID: 6834054392913296878}
+  - component: {fileID: 2874395499163556604}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 5497943241019269995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: 0, z: 0}
+  m_LocalPosition: {x: -4.49, y: 2.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -187,7 +187,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.11, y: 0}
   m_Radius: 0.44397974
---- !u!114 &3699516623894001175
+--- !u!114 &6834054392913296878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,19 +196,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5497943241019269995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac4a220b2ae3e343a8ff4664a50bf58, type: 3}
+  m_Script: {fileID: 11500000, guid: 56c047990d0f7984a8e6b3af8ea49f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6.02
-  fuerzaSalto: 11
-  longitudRaycast: 0.1
-  capaSuelo:
-    serializedVersion: 2
-    m_Bits: 8
-  controladorSuelo: {fileID: 4027381762673585439}
-  dimensionesCaja: {x: 0.23, y: 0.58, z: 0}
-  animator: {fileID: 7549613089919177433}
---- !u!95 &7549613089919177433
+  velocidad: 3
+  fuerzaSalto: 10
+  audioClipSalto: {fileID: 8300000, guid: 0f41e88a93dcd2b45905fe3c73442c2c, type: 3}
+--- !u!95 &2874395499163556604
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
