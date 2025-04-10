@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class BulletScrip : MonoBehaviour
 {
     public float Speed = 5f;
@@ -12,7 +11,7 @@ public class BulletScrip : MonoBehaviour
     private void Start()
     {
         Rigibody2D = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 3f); // Destruye la bala despu�s de 3 segundos
+        Destroy(gameObject, 3f); // ← Aquí se destruye la bala automáticamente después de 3 segundos
     }
 
     private void FixedUpdate()
@@ -25,9 +24,12 @@ public class BulletScrip : MonoBehaviour
         Direction = direction.normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject); // Se destruye también si toca al jugador
+            // Aquí podrías poner: other.GetComponent<VidaJugador>().RecibirDaño(1);
+        }
     }
 }
-

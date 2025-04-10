@@ -2,25 +2,28 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+
 public class MovemPlayer : MonoBehaviour
 {
+    public GameObject BulletPrefab;
     Rigidbody2D rigiBodyPlayer;
     public float velocidad = 3;
     public float fuerzaSalto = 5;
     [SerializeField] private AudioClip audioClipSalto;
-    public float radioCirculo; // Cambia el tamaño del Gizmo aquí
+    public float radioCirculo;
     public Vector2 posicionCirculo;
-    Collider2D enSuelo;
+
     void Start()
     {
-        rigiBodyPlayer = GetComponent<Rigidbody2D>(); // Fix: Assign the Rigidbody2D to the class-level variable
+        rigiBodyPlayer = GetComponent<Rigidbody2D>();
     }
+
     void Update()
     {
         ProcesarMovimiento();
         VoltearJugador();
 
-        if (GetComponent<Rigidbody2D>().linearVelocity.x == 0) //si esta quieto 
+        if (rigiBodyPlayer.linearVelocity.x == 0)
         {
             GetComponent<Animator>().SetBool("caminando", false);
         }
@@ -29,44 +32,58 @@ public class MovemPlayer : MonoBehaviour
             GetComponent<Animator>().SetBool("caminando", true);
         }
 
-        GetComponent<Animator>().SetFloat("velocidadY", GetComponent<Rigidbody2D>().linearVelocity.y);
+        GetComponent<Animator>().SetFloat("velocidadY", rigiBodyPlayer.linearVelocity.y);
 
-        if (GetComponent<Rigidbody2D>().linearVelocity.y == 0) //si esta en el suelo 
+        if (rigiBodyPlayer.linearVelocity.y == 0)
         {
             GetComponent<Animator>().SetTrigger("enSuelo");
         }
     }
+
     void ProcesarMovimiento()
     {
         float inputMovimiento = Input.GetAxisRaw("Horizontal");
-        rigiBodyPlayer.linearVelocity = new Vector2(inputMovimiento * velocidad, rigiBodyPlayer.linearVelocity.y); // Fix: Corrected property name to 'velocity'
+        rigiBodyPlayer.linearVelocity = new Vector2(inputMovimiento * velocidad, rigiBodyPlayer.linearVelocity.y);
     }
+
     void VoltearJugador()
     {
         float inputMovimiento = Input.GetAxisRaw("Horizontal");
         if (inputMovimiento > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // Voltear a la derecha
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (inputMovimiento < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Voltear a la izquierda
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+
     void ProcesarSalto()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (GetComponent<Rigidbody2D>().linearVelocity.y == 0)
+            if (rigiBodyPlayer.linearVelocity.y == 0)
             {
                 ControladorSonido.Instance.EjecutarSonido(audioClipSalto);
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(GetComponent<Rigidbody2D>().linearVelocity.x, fuerzaSalto); // Fix: Replaced 'velocity' with 'linearVelocity'
+                rigiBodyPlayer.linearVelocity = new Vector2(rigiBodyPlayer.linearVelocity.x, fuerzaSalto);
             }
+
+            Shoot();
         }
     }
-    private void OnDrawGizmosSelected()
+
+    private void Shoot()
     {
-        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y + posicionCirculo.y), radioCirculo); // Cambia el tamaño del Gizmo aquí
+        Vector2 direction;
+
+        if (transform.localScale.x > 0)
+            direction = Vector2.right;
+        else
+            direction = Vector2.left;
+
+        GameObject bullet = Instantiate(BulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
+        bullet.GetComponent<BulletScrip>().SetDirection(direction);
     }
 
     private void FixedUpdate()

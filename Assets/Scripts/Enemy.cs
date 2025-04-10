@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Gruentscrip : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class Gruentscrip : MonoBehaviour
     {
         Vector3 direction = Player.transform.position - transform.position;
 
-
+        // Voltear sprite
         if (direction.x >= 0.0f)
             transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
         else
@@ -34,14 +36,13 @@ public class Gruentscrip : MonoBehaviour
             LastShoot = Time.time;
         }
     }
+
     private void Shoot()
     {
-        Vector3 direction;
-        if (transform.localScale.x == 1.0f) direction = Vector3.right;
-        else direction = Vector3.left;
+        Vector2 direction = (Player.transform.position - transform.position).normalized; // Apunta al jugador
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<BulletScrip>().SetDirection(direction);    
+        bullet.GetComponent<BulletScrip>().SetDirection(direction); // Solo una vez
     }
 
 }
