@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7234529458642945047}
   - component: {fileID: 1955778728770664231}
   - component: {fileID: 5430314217108208746}
-  - component: {fileID: 977211515036869699}
   - component: {fileID: 2294608577078539346}
+  - component: {fileID: 4978594033935214551}
   m_Layer: 6
   m_Name: Banana
   m_TagString: Untagged
@@ -136,21 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4609799, y: 1.3486602}
   m_EdgeRadius: 0
---- !u!114 &977211515036869699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672604796818636919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb07d79465ee7654185347dea89d8bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valor: 0
-  velocidadCambioEscala: 1
-  audioClipGema: {fileID: 8300000, guid: 6e2ed97c031215a45b702963046d694c, type: 3}
 --- !u!114 &2294608577078539346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +150,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duracion: 1.21
   factorEscala: 0.85
+--- !u!114 &4978594033935214551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672604796818636919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7581cf6d3eebd4bb8fddac918a8622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadExtra: 4
+  audioClipGema: {fileID: 8300000, guid: 6e2ed97c031215a45b702963046d694c, type: 3}
 --- !u!1 &2014806768916356727
 GameObject:
   m_ObjectHideFlags: 0
