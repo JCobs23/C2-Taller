@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 1691052369
+    locked: 0
+  - name: Player
+    uniqueID: 251764707
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
