@@ -9,7 +9,7 @@ using UnityEngine;
 public class Gruentscrip : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject BalaPrefab;
+    public GameObject BulletPrefab;
     private float LastShoot;
     private Vector3 originalScale;
 
@@ -38,8 +38,12 @@ public class Gruentscrip : MonoBehaviour
     }
     private void Shoot()
     {
-       Debug.Log("Disparando");
-       
+        Vector3 direction;
+        if (transform.localScale.x == 1.0f) direction = Vector3.right;
+        else direction = Vector3.left;
+
+        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().SetDirection(direction);    
     }
 
 }
