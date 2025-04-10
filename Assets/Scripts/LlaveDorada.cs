@@ -1,48 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LlaveDorada : MonoBehaviour
 {
-    public string sceneToLoad; // Nombre de la escena a cargar
-    private SpriteRenderer spriteRenderer; // Referencia al SpriteRenderer del objeto
+    public string sceneToLoad = "SceneGame2";
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
     void Start()
     {
-        // Obtener el SpriteRenderer del objeto
         spriteRenderer = GetComponent<SpriteRenderer>();
-        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        if (spriteRenderer != null)
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        if (spriteRenderer != null && boxCollider != null)
         {
-            spriteRenderer.enabled = false; // Hacer el objeto invisible al inicio
-            boxCollider.enabled = false; // Deshabilitar el BoxCollider al inicio
-        }
-        else
-        {
-            Debug.LogError("No se encontró un SpriteRenderer en el objeto.");
+            spriteRenderer.enabled = false;
+            boxCollider.enabled = false;
         }
     }
 
     void Update()
     {
-        if (GameManager.Instance.Score == 50)
+        if (GameManager.Instance.Score >= 50)
+
         {
             if (!spriteRenderer.enabled)
             {
-                spriteRenderer.enabled = true; // Hacer visible el objeto
-                GetComponent<BoxCollider2D>().enabled = true; // Habilitar el BoxCollider
+                spriteRenderer.enabled = true;
+                boxCollider.enabled = true;
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificar si el jugador colisiona con el objeto
-        if (collision.CompareTag("Player") & GameManager.Instance.Score == 50)
+        Debug.Log("Algo tocó la llave: " + collision.name);
+
+        if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(sceneToLoad);
-            Destroy(gameObject); 
+            Debug.Log("Es el jugador");
+
+            if (GameManager.Instance.Score >= 50)
+
+            {
+                Debug.Log("Puntaje correcto. Cargando escena...");
+                SceneManager.LoadScene(sceneToLoad);
+            }
+            else
+            {
+                Debug.Log("Puntaje incorrecto: " + GameManager.Instance.Score);
+            }
         }
     }
 }
