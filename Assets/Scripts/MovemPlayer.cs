@@ -12,6 +12,7 @@ public class MovemPlayer : MonoBehaviour
     [SerializeField] private AudioClip audioClipSalto;
     public float radioCirculo;
     public Vector2 posicionCirculo;
+    public int vida = 3;
 
     void Start()
     {
@@ -38,7 +39,13 @@ public class MovemPlayer : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("enSuelo");
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Shoot();
+        }
     }
+
 
     void ProcesarMovimiento()
     {
@@ -68,15 +75,29 @@ public class MovemPlayer : MonoBehaviour
                 ControladorSonido.Instance.EjecutarSonido(audioClipSalto);
                 rigiBodyPlayer.linearVelocity = new Vector2(rigiBodyPlayer.linearVelocity.x, fuerzaSalto);
             }
-
-            Shoot();
         }
+    }
+    public void RecibirDaño(int daño)
+    {
+        vida -= daño;
+        Debug.Log("Vida restante: " + vida);
+
+        if (vida <= 0)
+        {
+            Morir();
+        }
+    }
+
+    void Morir()
+    {
+        Debug.Log("¡Jugador eliminado!");
+        Destroy(gameObject);
     }
 
     private void Shoot()
     {
         Vector2 direction;
-
+           
         if (transform.localScale.x > 0)
             direction = Vector2.right;
         else
@@ -85,9 +106,18 @@ public class MovemPlayer : MonoBehaviour
         GameObject bullet = Instantiate(BulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
         bullet.GetComponent<BulletScrip>().SetDirection(direction);
     }
-
+ 
     private void FixedUpdate()
     {
         ProcesarSalto();
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("BalaEnemy"))
+        {
+            RecibirDaño(1); // Le resta 1 de vida
+            Destroy(other.gameObject); // Destruye la bala
+        }
+    }
+
 }
