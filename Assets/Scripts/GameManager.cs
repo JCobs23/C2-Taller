@@ -5,15 +5,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private int score=0;
+
+    private int score = 0;
     public int Score { get => score; set => score = value; }
+
+    private float tiempoAcumulado = 0f;
+    public float TiempoAcumulado { get => tiempoAcumulado; set => tiempoAcumulado = value; }
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); //Persistencia de la instancia del GameManager
+            DontDestroyOnLoad(gameObject); // Persistencia del GameManager entre escenas
         }
         else
         {
@@ -21,26 +25,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SumValues(int count)
     {
         score += count;
     }
 
-    public void ResetValue()
+    public void ResetScore()
     {
         score = 0;
     }
 
+    public void ResetTiempo()
+    {
+        tiempoAcumulado = 0f;
+    }
 }

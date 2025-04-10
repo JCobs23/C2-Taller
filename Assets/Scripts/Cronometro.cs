@@ -1,18 +1,17 @@
 using UnityEngine;
-using System.Collections; // Necesario para corrutinas
-using System.Collections.Generic; // Necesario para listas
-using TMPro; // Necesario para usar TextMeshPro
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 
 public class Cronometro : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textoCronometro; // Texto donde se mostrara el cronómetro
-    [SerializeField] private float tiempo; // Tiempo acumulado
+    [SerializeField] private TextMeshProUGUI textoCronometro;
 
     private int tiempoMinutos;
     private int tiempoSegundos;
     private int tiempoMilisegundos;
 
-    private bool cronometroActivo = true; // Controla si el cronometro esta funcionando o no
+    private bool cronometroActivo = true;
 
     void Update()
     {
@@ -23,7 +22,9 @@ public class Cronometro : MonoBehaviour
     {
         if (cronometroActivo == true)
         {
-            tiempo += Time.deltaTime;
+            GameManager.Instance.TiempoAcumulado += Time.deltaTime;
+
+            float tiempo = GameManager.Instance.TiempoAcumulado;
 
             tiempoMinutos = Mathf.FloorToInt(tiempo / 60);
             tiempoSegundos = Mathf.FloorToInt(tiempo % 60);
