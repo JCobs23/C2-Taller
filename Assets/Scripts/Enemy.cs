@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 
 public class Gruentscrip : MonoBehaviour
 {
@@ -30,7 +28,7 @@ public class Gruentscrip : MonoBehaviour
 
         float distance = Mathf.Abs(Player.transform.position.x - transform.position.x);
 
-        if (distance < 1.0f && Time.time > LastShoot + 1.0f)
+        if (distance < 5.0f && Time.time > LastShoot + 1.0f)
         {
             Shoot();
             LastShoot = Time.time;
@@ -43,7 +41,7 @@ public class Gruentscrip : MonoBehaviour
         else direction = Vector3.left;
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<BulletScript>().SetDirection(direction);    
+        bullet.GetComponent<BulletScrip>().SetDirection(direction);    
     }
 
 }
