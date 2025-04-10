@@ -6,7 +6,7 @@ using TMPro;
 public class GameControllerScene1 : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI txtGemaScore;
+    private TextMeshProUGUI txtAppleScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,6 @@ public class GameControllerScene1 : MonoBehaviour
 
     public void ShowScore()
     {
-        txtGemaScore.text=GameManager.Instance.Score.ToString();
+        txtAppleScore.text=GameManager.Instance.Score.ToString();
     }
 }

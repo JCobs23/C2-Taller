@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class GemaRecolected : MonoBehaviour
+public class AppleRecolected : MonoBehaviour
 {
     public int valor = 5;
     public float velocidadCambioEscala = 2f;
