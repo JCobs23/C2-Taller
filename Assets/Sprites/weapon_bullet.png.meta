@@ -1,37 +1,19 @@
 fileFormatVersion: 2
-guid: 1041b956e9a731345b3ed355fecfde20
+guid: b43b3931cb76b2445bb6882015c6bb65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1888350199435378300
-    second: john_run_0
+      213: 5902855450250165542
+    second: weapon_bullet_0
   - first:
-      213: 6541743659741826661
-    second: john_run_1
+      213: -3156122162549437794
+    second: weapon_bullet_1
   - first:
-      213: 7001243494428182240
-    second: john_run_2
+      213: -7500341700066412395
+    second: weapon_bullet_2
   - first:
-      213: 8191198841913579557
-    second: john_run_3
-  - first:
-      213: -8608069325684978399
-    second: john_run_4
-  - first:
-      213: -4880388102609155903
-    second: john_run_5
-  - first:
-      213: -3397331291000416934
-    second: john_run_6
-  - first:
-      213: -8405588526714033350
-    second: john_run_7
-  - first:
-      213: -8364935224961101854
-    second: john_run_8
-  - first:
-      213: 8173934885402187471
-    second: john_run_9
+      213: -7233278182342934215
+    second: weapon_bullet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: john_run_0
+      name: weapon_bullet_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 481cd1f9f7b3bc5e0800000000000000
-      internalID: -1888350199435378300
+      spriteID: 62db3a0e1c72be150800000000000000
+      internalID: 5902855450250165542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_1
+      name: weapon_bullet_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 8
         y: 0
-        width: 20
-        height: 19
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56e439ae231f8ca50800000000000000
-      internalID: 6541743659741826661
+      spriteID: e9ac0817d933334d0800000000000000
+      internalID: -3156122162549437794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_2
+      name: weapon_bullet_2
       rect:
         serializedVersion: 2
-        x: 56
+        x: 16
         y: 0
-        width: 20
-        height: 19
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e6086f2dd9692160800000000000000
-      internalID: 7001243494428182240
+      spriteID: 598fd7956fe69e790800000000000000
+      internalID: -7500341700066412395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_3
+      name: weapon_bullet_3
       rect:
         serializedVersion: 2
-        x: 82
+        x: 24
         y: 0
-        width: 21
-        height: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,140 +216,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 52899d8a2fbfca170800000000000000
-      internalID: 8191198841913579557
+      spriteID: 931cdd311db3e9b90800000000000000
+      internalID: -7233278182342934215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_4
+      name: weapon_bullet_4
       rect:
         serializedVersion: 2
-        x: 107
+        x: 32
         y: 0
-        width: 22
-        height: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 12d4c984e8ef98880800000000000000
-      internalID: -8608069325684978399
+      spriteID: 46df2c12f727ff54cb9e740428c78472
+      internalID: 804073013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_5
+      name: weapon_bullet_5
       rect:
         serializedVersion: 2
-        x: 134
+        x: 40
         y: 0
-        width: 21
-        height: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1c840f9c0e0654cb0800000000000000
-      internalID: -4880388102609155903
+      spriteID: 820e61398da816b449c5e3b3b1d334ec
+      internalID: 219505967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: john_run_6
+      name: weapon_bullet_6
       rect:
         serializedVersion: 2
-        x: 159
+        x: 48
         y: 0
-        width: 23
-        height: 19
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a55d99fc0314ad0d0800000000000000
-      internalID: -3397331291000416934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_run_7
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 0
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3b6c1905c9595b80800000000000000
-      internalID: -8405588526714033350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_run_8
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 23
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ef8a037bb7c9eb80800000000000000
-      internalID: -8364935224961101854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: john_run_9
-      rect:
-        serializedVersion: 2
-        x: 238
-        y: 0
-        width: 21
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc6129d8876af6170800000000000000
-      internalID: 8173934885402187471
+      spriteID: 40d9677997e116a4e91d3f494090cd1d
+      internalID: 641251599
       vertices: []
       indices: 
       edges: []
@@ -376,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c48a775d507464343984821f1039845a
     internalID: 0
     vertices: []
     indices: 
@@ -386,16 +302,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      john_run_0: -1888350199435378300
-      john_run_1: 6541743659741826661
-      john_run_2: 7001243494428182240
-      john_run_3: 8191198841913579557
-      john_run_4: -8608069325684978399
-      john_run_5: -4880388102609155903
-      john_run_6: -3397331291000416934
-      john_run_7: -8405588526714033350
-      john_run_8: -8364935224961101854
-      john_run_9: 8173934885402187471
+      weapon_bullet_0: 5902855450250165542
+      weapon_bullet_1: -3156122162549437794
+      weapon_bullet_2: -7500341700066412395
+      weapon_bullet_3: -7233278182342934215
+      weapon_bullet_4: 804073013
+      weapon_bullet_5: 219505967
+      weapon_bullet_6: 641251599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
