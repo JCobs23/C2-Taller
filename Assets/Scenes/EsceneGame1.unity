@@ -1187,6 +1187,10 @@ PrefabInstance:
       propertyPath: txtGemaScore
       value: 
       objectReference: {fileID: 45840807}
+    - target: {fileID: 7099366092203245010, guid: 10437675732a4334eb0887c693917dd7, type: 3}
+      propertyPath: txtAppleScore
+      value: 
+      objectReference: {fileID: 45840807}
     - target: {fileID: 7608152944939885168, guid: 10437675732a4334eb0887c693917dd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9565052
