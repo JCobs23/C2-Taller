@@ -3,8 +3,8 @@ using UnityEngine;
 public class AnimacionTamaño : MonoBehaviour
 {
     private Vector3 escalaOriginal;
-    private float duracion = 1f;
-    private float factorEscala = 1.5f;
+    public float duracion = 1f;
+    public float factorEscala = 1.5f;
 
     void Start()
     {

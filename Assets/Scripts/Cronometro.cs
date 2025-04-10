@@ -1,30 +1,48 @@
 using UnityEngine;
-using System.Collections; // Importa el espacio de nombres necesario para las corrutinas
-using System.Collections.Generic; // Importa el espacio de nombres necesario para las listas
-using TMPro;
+using System.Collections; // Necesario para corrutinas
+using System.Collections.Generic; // Necesario para listas
+using TMPro; // Necesario para usar TextMeshPro
 
-public class Cronometro : MonoBehaviour // Hereda de MonoBehaviour para que funcione en Unity
+public class Cronometro : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI textoCronometro; // Corrige el atributo SerializeField
-    [SerializeField] private float tiempo; // Corrige el atributo SerializeField y elimina "private" redundante
+    [SerializeField] private TextMeshProUGUI textoCronometro; // Texto donde se mostrara el cronómetro
+    [SerializeField] private float tiempo; // Tiempo acumulado
 
-    private int tiempoMinutos, tiempoSegundos, tiempoMilisegundos;
+    private int tiempoMinutos;
+    private int tiempoSegundos;
+    private int tiempoMilisegundos;
 
-    private void ActualizarCronometro() // Cambia el nombre del método para evitar conflicto con el nombre de la clase
+    private bool cronometroActivo = true; // Controla si el cronometro esta funcionando o no
+
+    void Update()
     {
-        tiempo += Time.deltaTime;
-        tiempoMinutos = Mathf.FloorToInt(tiempo / 60);
-        tiempoSegundos = Mathf.FloorToInt(tiempo % 60);
-        tiempoMilisegundos = Mathf.FloorToInt((tiempo - (tiempoSegundos + tiempoMinutos * 60)) * 100);
+        ActualizarCronometro();
+    }
 
-        if (textoCronometro != null) // Verifica que textoCronometro no sea nulo
+    void ActualizarCronometro()
+    {
+        if (cronometroActivo == true)
         {
-            textoCronometro.text = string.Format("{0:00}:{1:00}:{2:00}", tiempoMinutos, tiempoSegundos, tiempoMilisegundos);
+            tiempo += Time.deltaTime;
+
+            tiempoMinutos = Mathf.FloorToInt(tiempo / 60);
+            tiempoSegundos = Mathf.FloorToInt(tiempo % 60);
+            tiempoMilisegundos = Mathf.FloorToInt((tiempo - (tiempoSegundos + tiempoMinutos * 60)) * 100);
+
+            if (textoCronometro != null)
+            {
+                textoCronometro.text = string.Format("{0:00}:{1:00}:{2:00}", tiempoMinutos, tiempoSegundos, tiempoMilisegundos);
+            }
         }
     }
 
-    private void Update() // Cambia "update" a "Update" para que Unity lo reconozca
+    public void DetenerTiempo()
     {
-        ActualizarCronometro();
+        cronometroActivo = false;
+    }
+
+    public void ReanudarTiempo()
+    {
+        cronometroActivo = true;
     }
 }
