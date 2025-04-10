@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7581cf6d3eebd4bb8fddac918a8622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadExtra: 4
+  velocidadExtra: 3
   audioClipGema: {fileID: 8300000, guid: 6e2ed97c031215a45b702963046d694c, type: 3}
 --- !u!1 &2014806768916356727
 GameObject:
