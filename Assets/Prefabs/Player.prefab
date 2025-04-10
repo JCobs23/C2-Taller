@@ -148,7 +148,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &8548039449265170507
 CircleCollider2D:
@@ -198,12 +198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c047990d0f7984a8e6b3af8ea49f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 0}
+  BulletPrefab: {fileID: 3013398708487000210, guid: 5fa4bf5388079604fbe1dc0db2dee815, type: 3}
   velocidad: 4
   fuerzaSalto: 10
   audioClipSalto: {fileID: 8300000, guid: 0f41e88a93dcd2b45905fe3c73442c2c, type: 3}
   radioCirculo: 0.18
   posicionCirculo: {x: 0, y: -0.68}
+  vida: 3
+  shooterTag: 
 --- !u!95 &2874395499163556604
 Animator:
   serializedVersion: 7

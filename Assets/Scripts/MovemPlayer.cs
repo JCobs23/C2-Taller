@@ -13,6 +13,7 @@ public class MovemPlayer : MonoBehaviour
     public float radioCirculo;
     public Vector2 posicionCirculo;
     public int vida = 3;
+    public string shooterTag;
 
     void Start()
     {
@@ -93,11 +94,15 @@ public class MovemPlayer : MonoBehaviour
         Debug.Log("¡Jugador eliminado!");
         Destroy(gameObject);
     }
+    public void SetShooterTag(string tag)
+    {
+        shooterTag = tag;
+    }
 
     private void Shoot()
     {
         Vector2 direction;
-           
+
         if (transform.localScale.x > 0)
             direction = Vector2.right;
         else
@@ -105,19 +110,30 @@ public class MovemPlayer : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
         bullet.GetComponent<BulletScrip>().SetDirection(direction);
+        bullet.GetComponent<BulletScrip>().SetShooterTag("Player"); // CORREGIDO
     }
- 
+
+
     private void FixedUpdate()
     {
         ProcesarSalto();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("BalaEnemy"))
+        if (shooterTag == "Enemy" && other.CompareTag("Player"))
         {
-            RecibirDaño(1); // Le resta 1 de vida
-            Destroy(other.gameObject); // Destruye la bala
+            MovemPlayer player = other.GetComponent<MovemPlayer>();
+            if (player != null)
+            {
+                player.RecibirDaño(1);
+            }
+            Destroy(gameObject);
+        }
+
+        if (shooterTag == "Player" && other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
-
 }
