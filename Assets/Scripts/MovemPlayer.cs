@@ -103,7 +103,7 @@ public class MovemPlayer : MonoBehaviour
         }
     }
 
-    void Morir()
+    public void Morir() 
     {
         Debug.Log("¡Jugador eliminado!");
         StartCoroutine(ReiniciarEscena());
