@@ -14,10 +14,19 @@ public class MovemPlayer : MonoBehaviour
     public Vector2 posicionCirculo;
     public int vida = 3;
     public string shooterTag;
+    public UIVidaManager vidaUI;
 
     void Start()
     {
         rigiBodyPlayer = GetComponent<Rigidbody2D>();
+
+        // Buscar el UIVidaManager si no fue asignado manualmente
+        if (vidaUI == null)
+            vidaUI = FindObjectOfType<UIVidaManager>();
+
+        // Mostrar las vidas al iniciar
+        if (vidaUI != null)
+            vidaUI.ActualizarVidas(vida);
     }
 
     void Update()
@@ -46,7 +55,6 @@ public class MovemPlayer : MonoBehaviour
             Shoot();
         }
     }
-
 
     void ProcesarMovimiento()
     {
@@ -78,10 +86,17 @@ public class MovemPlayer : MonoBehaviour
             }
         }
     }
+
     public void RecibirDaño(int daño)
     {
         vida -= daño;
         Debug.Log("Vida restante: " + vida);
+
+        // Actualizar corazones en pantalla
+        if (vidaUI != null)
+        {
+            vidaUI.ActualizarVidas(vida);
+        }
 
         if (vida <= 0)
         {
@@ -94,6 +109,7 @@ public class MovemPlayer : MonoBehaviour
         Debug.Log("¡Jugador eliminado!");
         Destroy(gameObject);
     }
+
     public void SetShooterTag(string tag)
     {
         shooterTag = tag;
@@ -110,14 +126,14 @@ public class MovemPlayer : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
         bullet.GetComponent<BulletScrip>().SetDirection(direction);
-        bullet.GetComponent<BulletScrip>().SetShooterTag("Player"); // CORREGIDO
+        bullet.GetComponent<BulletScrip>().SetShooterTag("Player");
     }
-
 
     private void FixedUpdate()
     {
         ProcesarSalto();
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (shooterTag == "Enemy" && other.CompareTag("Player"))
