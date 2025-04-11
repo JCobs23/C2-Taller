@@ -1,7 +1,8 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement; // ‚Üê Agregado para reiniciar la escena
 
 public class MovemPlayer : MonoBehaviour
 {
@@ -20,11 +21,9 @@ public class MovemPlayer : MonoBehaviour
     {
         rigiBodyPlayer = GetComponent<Rigidbody2D>();
 
-        // Buscar el UIVidaManager si no fue asignado manualmente
         if (vidaUI == null)
             vidaUI = FindObjectOfType<UIVidaManager>();
 
-        // Mostrar las vidas al iniciar
         if (vidaUI != null)
             vidaUI.ActualizarVidas(vida);
     }
@@ -87,9 +86,9 @@ public class MovemPlayer : MonoBehaviour
         }
     }
 
-    public void RecibirDaÒo(int daÒo)
+    public void RecibirDa√±o(int da√±o)
     {
-        vida -= daÒo;
+        vida -= da√±o;
         Debug.Log("Vida restante: " + vida);
 
         // Actualizar corazones en pantalla
@@ -106,8 +105,14 @@ public class MovemPlayer : MonoBehaviour
 
     void Morir()
     {
-        Debug.Log("°Jugador eliminado!");
-        Destroy(gameObject);
+        Debug.Log("¬°Jugador eliminado!");
+        StartCoroutine(ReiniciarEscena());
+    }
+
+    IEnumerator ReiniciarEscena()
+    {
+        yield return new WaitForSeconds(1f); // Espera 1 segundo antes de reiniciar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void SetShooterTag(string tag)
@@ -141,7 +146,7 @@ public class MovemPlayer : MonoBehaviour
             MovemPlayer player = other.GetComponent<MovemPlayer>();
             if (player != null)
             {
-                player.RecibirDaÒo(1);
+                player.RecibirDa√±o(1);
             }
             Destroy(gameObject);
         }
