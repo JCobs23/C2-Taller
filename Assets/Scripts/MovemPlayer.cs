@@ -111,7 +111,7 @@ public class MovemPlayer : MonoBehaviour
 
     IEnumerator ReiniciarEscena()
     {
-        yield return new WaitForSeconds(1f); // Espera 1 segundo antes de reiniciar
+        yield return new WaitForSeconds(1f); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
