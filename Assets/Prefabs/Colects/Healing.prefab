@@ -125,7 +125,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.008722782, y: -0.6344863}
+  m_Offset: {x: -0.008722782, y: -0.9322312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4609799, y: 2.5579884}
+  m_Size: {x: 1.4609799, y: 3.1534786}
   m_EdgeRadius: 0
 --- !u!114 &1011649692978235126
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valor: 10
   objetoTipo: 6
-  audioClipGema: {fileID: 8300000, guid: 83a47f001d7fd4c46a0a33f5c5469d8f, type: 3}
+  audioClipGema: {fileID: 8300000, guid: 6e2ed97c031215a45b702963046d694c, type: 3}
 --- !u!114 &2044015123311154919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 7447675693864041090}
   - component: {fileID: 828609752584947944}
   m_Layer: 0
-  m_Name: AppRed 1
+  m_Name: Healing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

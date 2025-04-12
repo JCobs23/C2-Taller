@@ -29,11 +29,14 @@ public class GameManager : MonoBehaviour
     private int sandiasRec = 0;
     public int SandiasRec { get => sandiasRec; set => sandiasRec = value; }
 
-    public int estrellas = 0;
-    public int Estrellas { get => estrellas; set => estrellas = value; }
+    //public int estrellas = 0;
+    //public int Estrellas { get => estrellas; set => estrellas = value; }
 
     public int curaciones = 0;
     public int Curaciones { get => curaciones; set => curaciones = value; }
+
+    public int piñasRec = 0;
+    public int PiñasRec { get => piñasRec; set => piñasRec = value; }
 
     //Tiempo
     private float tiempoAcumulado = 0f;
@@ -81,13 +84,17 @@ public class GameManager : MonoBehaviour
         {
             manzanasVerdesRec++;
         }
-        else if (objetoTipo == "Estrella")
-        {
-            estrellas++;
-        }
+        //else if (objetoTipo == "Estrella")
+        //{
+        //    estrellas++;
+        //}
         else if (objetoTipo == "Curacion")
         {
             curaciones++;
+        }
+        else if (objetoTipo == "Piña")
+        {
+            piñasRec++;
         }
     }
 
