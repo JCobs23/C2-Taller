@@ -2,15 +2,15 @@
 
 public class ObjetoRecolectado : MonoBehaviour
 {
-    public enum TipoObjeto
-    {
-        Manzana, Sandia, Uva, Banana, ManzanaVerde, Estrella, Curacion, Ninguno
-    }
-
     public int valor = 5;
     public TipoObjeto objetoTipo = TipoObjeto.Ninguno;
 
     [SerializeField] private AudioClip audioClipGema;
+
+    public enum TipoObjeto
+    {
+        Manzana, Sandia, Uva, Banana, ManzanaVerde, Estrella, Curacion, Piña, Ninguno
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +20,7 @@ public class ObjetoRecolectado : MonoBehaviour
 
         if (jugador != null)
         {
-            // Si es curación
+            // Si es curacion
             if (objetoTipo == TipoObjeto.Curacion)
             {
                 if (jugador.Vida < 5)

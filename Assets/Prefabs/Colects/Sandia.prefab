@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1011649692978235126}
   - component: {fileID: 2044015123311154919}
   m_Layer: 6
-  m_Name: ManzanaRed
+  m_Name: Sandia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.008722812, y: -0.02982235}
+  m_Offset: {x: -0.008722782, y: -0.644598}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +134,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4609799, y: 1.3486602}
+  m_Size: {x: 1.4609799, y: 2.5782115}
   m_EdgeRadius: 0
 --- !u!114 &1011649692978235126
 MonoBehaviour:
@@ -149,9 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 10
-  objetoTipo: 0
-  velocidadCambioEscala: 1
-  audioClipGema: {fileID: 8300000, guid: 83a47f001d7fd4c46a0a33f5c5469d8f, type: 3}
+  objetoTipo: 1
+  audioClipGema: {fileID: 8300000, guid: be5d299c40581f64c8fa83a3e6ba1dd6, type: 3}
 --- !u!114 &2044015123311154919
 MonoBehaviour:
   m_ObjectHideFlags: 0
