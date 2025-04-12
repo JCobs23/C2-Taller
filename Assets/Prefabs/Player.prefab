@@ -205,7 +205,7 @@ MonoBehaviour:
   radioCirculo: 0.18
   posicionCirculo: {x: 0, y: -0.68}
   vida: 3
-  shooterTag: 
+  shooterTag: Player
   vidaUI: {fileID: 0}
 --- !u!95 &2874395499163556604
 Animator:

@@ -17,7 +17,7 @@ public class Gruentscrip : MonoBehaviour
     private void Start()
     {
         originalScale = transform.localScale;
-        rb = GetComponent<Rigidbody2D>(); // Necesita Rigidbody2D
+        rb = GetComponent<Rigidbody2D>(); // Necesita Rigidbody2D  
     }
 
     private void Update()
@@ -26,22 +26,22 @@ public class Gruentscrip : MonoBehaviour
 
         Vector3 direction = Player.transform.position - transform.position;
 
-        // Volteo del sprite
-        if (direction.x >= 0.0f)
-            transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
-        else
+        // Volteo del sprite solo si el jugador está a la derecha  
+        if (direction.x > 0.0f)
             transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        else
+            transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
 
         float distance = direction.magnitude;
 
-        // Disparar si el jugador está cerca
+        // Disparar si el jugador está cerca  
         if (distance < shootingDistance && Time.time > LastShoot + 1.0f)
         {
             Shoot(direction);
             LastShoot = Time.time;
         }
 
-        // Seguir al jugador si está a cierta distancia
+        // Seguir al jugador si está a cierta distancia  
         if (distance < followDistance)
         {
             Vector2 moveDirection = direction.normalized;
@@ -49,7 +49,7 @@ public class Gruentscrip : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // detenerse
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // detenerse  
         }
     }
 
@@ -61,6 +61,10 @@ public class Gruentscrip : MonoBehaviour
         BulletScrip bulletScript = bullet.GetComponent<BulletScrip>();
         bulletScript.SetDirection(bulletDirection);
         bulletScript.SetShooterTag("Enemy");
+
+        // Asegurarse de que la rotación de la bala apunte en la dirección correcta  
+        float angle = Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8901278708843245487}
   - component: {fileID: 5058715639954780586}
   - component: {fileID: 5041921854202755633}
-  - component: {fileID: 8503780957315611186}
+  - component: {fileID: 7752586384346444015}
   m_Layer: 0
-  m_Name: FUNC-Grunt 1
+  m_Name: FUNC-GRUNT
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 8445801822834910575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0.74, y: 0.51, z: 0}
   m_LocalScale: {x: 9.115807, y: 8.887909, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,7 +176,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.095
---- !u!114 &8503780957315611186
+--- !u!114 &7752586384346444015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,11 +185,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8445801822834910575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655c169ae3db18d45880528a1c21d30b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2885e5a0b20d2de43989871b6a9fafdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 5497943241019269995, guid: 11f814e618c0fff48a1a5400a13c9f89, type: 3}
+  Player: {fileID: 0}
   BulletPrefab: {fileID: 3013398708487000210, guid: 5fa4bf5388079604fbe1dc0db2dee815, type: 3}
-  moveSpeed: 2
-  shootingDistance: 5
-  followDistance: 7
