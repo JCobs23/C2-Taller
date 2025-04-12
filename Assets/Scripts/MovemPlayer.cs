@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement; // ← Agregado para reiniciar la escena
 
 public class MovemPlayer : MonoBehaviour
 {
+
+    public static MovemPlayer Instance;
     public GameObject BulletPrefab;
     Rigidbody2D rigiBodyPlayer;
     public float velocidad = 3;
@@ -13,7 +15,10 @@ public class MovemPlayer : MonoBehaviour
     [SerializeField] private AudioClip audioClipSalto;
     public float radioCirculo;
     public Vector2 posicionCirculo;
+    
     public int vida = 3;
+    public int Vida { get => vida; set => vida = value; }
+
     public string shooterTag;
     public UIVidaManager vidaUI;
 

@@ -633,11 +633,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498296972844636396, guid: 5b14160abec920a45b5dbb3efbb9d9dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.87
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 1498296972844636396, guid: 5b14160abec920a45b5dbb3efbb9d9dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.030000119
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 1498296972844636396, guid: 5b14160abec920a45b5dbb3efbb9d9dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -696,6 +696,14 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2003415599}
+    - target: {fileID: 1603877985953725375, guid: 4b8884775c87f414cb5aaaef96f21f72, type: 3}
+      propertyPath: gemaPrefab
+      value: 
+      objectReference: {fileID: 1761983532510985410, guid: ced492ebf344e3543bec6bd7ad1126dc, type: 3}
+    - target: {fileID: 1603877985953725375, guid: 4b8884775c87f414cb5aaaef96f21f72, type: 3}
+      propertyPath: cantidadGemas
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1677712413011780363, guid: 4b8884775c87f414cb5aaaef96f21f72, type: 3}
       propertyPath: tilemap
       value: 

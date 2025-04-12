@@ -206,6 +206,7 @@ MonoBehaviour:
   posicionCirculo: {x: 0, y: -0.68}
   vida: 3
   shooterTag: 
+  vidaUI: {fileID: 0}
 --- !u!95 &2874395499163556604
 Animator:
   serializedVersion: 7

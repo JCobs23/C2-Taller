@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class GemaGenerador : MonoBehaviour
+public class SpawnerObjetos : MonoBehaviour
 {
-    public static GemaGenerador Instance;
+    public static SpawnerObjetos Instance;
     public GameObject gemaPrefab; // Prefab de la gema
     public Tilemap tilemap; // Referencia al Tilemap
     public int cantidadGemas;
@@ -20,11 +20,11 @@ public class GemaGenerador : MonoBehaviour
     void GenerarGemas()
     {
         BoundsInt bounds = tilemap.cellBounds; // Obtener los límites del Tilemap
-        int gemasGeneradas = 0;
+        int objetosGenerados = 0;
 
-        while (gemasGeneradas < cantidadGemas)
+        while (objetosGenerados < cantidadGemas)
         {
-            // Generar una posición aleatoria dentro de los límites del Tilemap
+            // Generar una posición aleatoria dentro de los limites del Tilemap
             int x = Random.Range(bounds.xMin, bounds.xMax);
             int y = Random.Range(bounds.yMin, bounds.yMax);
             Vector3Int cellPosition = new Vector3Int(x, y, 0);
@@ -40,7 +40,7 @@ public class GemaGenerador : MonoBehaviour
             {
                 // Instanciar la gema en la posición calculada
                 Instantiate(gemaPrefab, worldPosition, Quaternion.identity);
-                gemasGeneradas++;
+                objetosGenerados++;
             }
         }
     }
