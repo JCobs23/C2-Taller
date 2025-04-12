@@ -10,6 +10,7 @@ public class BotonGuardarUsuario : MonoBehaviour
 
     public static string nombreJugadorGuardado = "";
 
+
     void Start()
     {
         panelUsuario.SetActive(false); // Oculta el panel al inicio
@@ -36,8 +37,9 @@ public class BotonGuardarUsuario : MonoBehaviour
             // Crear objeto con los datos del jugador
             DatosJugador datos = new DatosJugador();
             datos.nombre = nombre;
-            datos.puntuacion = 0; // puedes actualizarlo después
+            datos.puntuacion = 0;
             datos.objetosRecolectados = 0;
+            datos.tiempoRecorrido = 0;
 
             // Convertir a JSON y guardar en archivo
             string json = JsonUtility.ToJson(datos, true);
