@@ -1,6 +1,7 @@
-using UnityEngine;
+using System.Collections.Generic;
 
-public class NewEmptyCSharpScript
+[System.Serializable]
+public class ListaJugadores
 {
-    
+    public List<DatosJugador> jugadores = new List<DatosJugador>();
 }
