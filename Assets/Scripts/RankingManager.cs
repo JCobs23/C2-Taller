@@ -39,11 +39,20 @@ public class RankingManager : MonoBehaviour
         // Mostrar nombre
         textoNombre.text = datos.nombre;
 
+        // DEBUG: imprimir valores para verificar
+        Debug.Log("Guardando datos:");
+        Debug.Log("Nombre: " + datos.nombre);
+        Debug.Log("Frutas: " + datos.objetosRecolectados);
+        Debug.Log("Puntuacion: " + datos.puntuacion);
+        Debug.Log("Tiempo: " + datos.tiempoRecorrido);
+
         // Guardar JSON
         string json = JsonUtility.ToJson(datos, true);
+        Debug.Log("JSON final generado:\n" + json); // <-- Mira esto en consola
         string rutaArchivo = Application.persistentDataPath + "/jugador.json";
         System.IO.File.WriteAllText(rutaArchivo, json);
     }
+
 
     public void ReiniciarDesdeCero()
     {

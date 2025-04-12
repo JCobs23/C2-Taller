@@ -6,10 +6,10 @@ using UnityEngine.Tilemaps;
 public class SpawnerObjetos : MonoBehaviour
 {
     public static SpawnerObjetos Instance;
-    public GameObject gemaPrefab; // Prefab de la gema
-    public Tilemap tilemap; // Referencia al Tilemap
+    public GameObject gemaPrefab; 
+    public Tilemap tilemap; 
     public int cantidadGemas;
-    public int CantidadGemas { get => cantidadGemas; set => cantidadGemas = value; } // Propiedad para acceder a la cantidad de gemas
+    public int CantidadGemas { get => cantidadGemas; set => cantidadGemas = value; } 
 
 
     void Start()
@@ -19,7 +19,7 @@ public class SpawnerObjetos : MonoBehaviour
 
     void GenerarGemas()
     {
-        BoundsInt bounds = tilemap.cellBounds; // Obtener los límites del Tilemap
+        BoundsInt bounds = tilemap.cellBounds; // Obtener los limites del Tilemap
         int objetosGenerados = 0;
 
         while (objetosGenerados < cantidadGemas)
@@ -29,7 +29,7 @@ public class SpawnerObjetos : MonoBehaviour
             int y = Random.Range(bounds.yMin, bounds.yMax);
             Vector3Int cellPosition = new Vector3Int(x, y, 0);
 
-            // Convertir la posición de celda a posición del mundo
+            // Convertir la posicion de celda a posicion del mundo
             Vector3 worldPosition = tilemap.CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0);
 
             // Ajustar la posición en Y sumando 2 unidades
@@ -38,7 +38,7 @@ public class SpawnerObjetos : MonoBehaviour
             // Verificar si la celda tiene un Tile (para evitar generar gemas fuera del mapa)
             if (tilemap.HasTile(cellPosition))
             {
-                // Instanciar la gema en la posición calculada
+                // Instanciar la gema en la posicion calculada
                 Instantiate(gemaPrefab, worldPosition, Quaternion.identity);
                 objetosGenerados++;
             }
