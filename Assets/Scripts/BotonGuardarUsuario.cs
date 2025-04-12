@@ -9,7 +9,11 @@ public class BotonGuardarUsuario : MonoBehaviour
     public Button botonGuardarUsuario;  // Botón para guardar el nombre
 
     public static string nombreJugadorGuardado = "";
+    public static string NombreJugadorGuardado { get => nombreJugadorGuardado; set => nombreJugadorGuardado = value; }
 
+    public static BotonGuardarUsuario Instance;
+
+  
 
     void Start()
     {
