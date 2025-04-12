@@ -1,10 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement; // ← Agregado para reiniciar la escena
 
 public class MovemPlayer : MonoBehaviour
 {
+
+    public static MovemPlayer Instance;
     public GameObject BulletPrefab;
     Rigidbody2D rigiBodyPlayer;
     public float velocidad = 3;
@@ -12,10 +15,22 @@ public class MovemPlayer : MonoBehaviour
     [SerializeField] private AudioClip audioClipSalto;
     public float radioCirculo;
     public Vector2 posicionCirculo;
+    
+    public int vida = 3;
+    public int Vida { get => vida; set => vida = value; }
+
+    public string shooterTag;
+    public UIVidaManager vidaUI;
 
     void Start()
     {
         rigiBodyPlayer = GetComponent<Rigidbody2D>();
+
+        if (vidaUI == null)
+            vidaUI = FindObjectOfType<UIVidaManager>();
+
+        if (vidaUI != null)
+            vidaUI.ActualizarVidas(vida);
     }
 
     void Update()
@@ -37,6 +52,11 @@ public class MovemPlayer : MonoBehaviour
         if (rigiBodyPlayer.linearVelocity.y == 0)
         {
             GetComponent<Animator>().SetTrigger("enSuelo");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Shoot();
         }
     }
 
@@ -68,9 +88,41 @@ public class MovemPlayer : MonoBehaviour
                 ControladorSonido.Instance.EjecutarSonido(audioClipSalto);
                 rigiBodyPlayer.linearVelocity = new Vector2(rigiBodyPlayer.linearVelocity.x, fuerzaSalto);
             }
-
-            Shoot();
         }
+    }
+
+    public void RecibirDaño(int daño)
+    {
+        vida -= daño;
+        Debug.Log("Vida restante: " + vida);
+
+        // Actualizar corazones en pantalla
+        if (vidaUI != null)
+        {
+            vidaUI.ActualizarVidas(vida);
+        }
+
+        if (vida <= 0)
+        {
+            Morir();
+        }
+    }
+
+    public void Morir() 
+    {
+        Debug.Log("¡Jugador eliminado!");
+        StartCoroutine(ReiniciarEscena());
+    }
+
+    IEnumerator ReiniciarEscena()
+    {
+        yield return new WaitForSeconds(1f); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SetShooterTag(string tag)
+    {
+        shooterTag = tag;
     }
 
     private void Shoot()
@@ -84,10 +136,30 @@ public class MovemPlayer : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
         bullet.GetComponent<BulletScrip>().SetDirection(direction);
+        bullet.GetComponent<BulletScrip>().SetShooterTag("Player");
     }
 
     private void FixedUpdate()
     {
         ProcesarSalto();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (shooterTag == "Enemy" && other.CompareTag("Player"))
+        {
+            MovemPlayer player = other.GetComponent<MovemPlayer>();
+            if (player != null)
+            {
+                player.RecibirDaño(1);
+            }
+            Destroy(gameObject);
+        }
+
+        if (shooterTag == "Player" && other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

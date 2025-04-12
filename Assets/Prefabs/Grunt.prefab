@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1011122710878167160}
   - component: {fileID: 5481492137739389814}
   - component: {fileID: 5953626399003264865}
-  - component: {fileID: 6167448057331376532}
+  - component: {fileID: 8919459855935376205}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Untagged
@@ -176,7 +176,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.095
---- !u!114 &6167448057331376532
+--- !u!114 &8919459855935376205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

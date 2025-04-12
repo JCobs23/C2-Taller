@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 5
+  objetoTipo: 6
   velocidadCambioEscala: 1
   audioClipGema: {fileID: 8300000, guid: be5d299c40581f64c8fa83a3e6ba1dd6, type: 3}
 --- !u!114 &2294608577078539346
