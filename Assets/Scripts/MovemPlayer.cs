@@ -15,8 +15,9 @@ public class MovemPlayer : MonoBehaviour
     [SerializeField] private AudioClip audioClipSalto;
     public float radioCirculo;
     public Vector2 posicionCirculo;
-    
-    public int vida = 3;
+
+    public int vida = 5;
+
     public int Vida { get => vida; set => vida = value; }
 
     public string shooterTag;
