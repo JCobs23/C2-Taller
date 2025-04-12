@@ -6673,7 +6673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b625b988b31b141b3891bd00227434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rankingManager: {fileID: 0}
+  rankingManager: {fileID: 840342296}
 --- !u!60 &1754430419 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 1335278585233986070, guid: 59e123fb779241f40a7ec26ea08e7826, type: 3}
