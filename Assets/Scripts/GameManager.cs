@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public float TiempoAcumulado { get => tiempoAcumulado; set => tiempoAcumulado = value; }
 
 
+
     //Cuerpo
     private void Awake()
     {
